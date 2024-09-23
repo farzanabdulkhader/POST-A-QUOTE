@@ -1,0 +1,12 @@
+.app {
+  width: 50rem;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-posts {
+  margin-top: 2rem;
+}

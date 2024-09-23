@@ -1,0 +1,16 @@
+.button {
+  background-color: rgb(77, 77, 184);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border-radius: 2px;
+  float: right;
+}
+
+.button:focus,
+.button:hover,
+.button:active {
+  background-color: rgb(68, 68, 174);
+}

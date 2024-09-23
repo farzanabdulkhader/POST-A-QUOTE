@@ -1,0 +1,14 @@
+.textarea {
+  padding: 0.3rem;
+  border: 1px solid rgb(110, 110, 110);
+  background-color: #fff;
+  outline: none;
+  width: 100%;
+  resize: none;
+  margin: 0.5rem 0;
+  font-family: Poppins;
+}
+
+.textarea:focus {
+  outline: 1px solid rgb(100, 100, 100);
+}

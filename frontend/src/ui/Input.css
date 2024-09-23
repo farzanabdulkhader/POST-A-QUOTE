@@ -1,0 +1,13 @@
+.input {
+  padding: 0.3rem;
+  border: 1px solid rgb(110, 110, 110);
+  background-color: #fff;
+  outline: none;
+  width: 100%;
+  margin: 0.5rem 0;
+  /* font-family: Poppins; */
+}
+
+.input:focus {
+  outline: 1px solid rgb(100, 100, 100);
+}

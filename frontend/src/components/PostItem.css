@@ -1,0 +1,61 @@
+.post {
+  padding: 1rem 2rem 1rem 1rem;
+  border-radius: 5px;
+  border-left: 0.5rem solid rgb(77, 77, 184);
+  width: 100%;
+  flex-grow: 1;
+  background-color: rgb(248, 248, 248);
+  box-shadow: 1px 1px 4px #d1d1d1;
+}
+
+.post-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-head p {
+  font-size: 0.8rem;
+}
+
+h4 {
+  margin-bottom: 0.4rem;
+}
+
+p {
+  color: #959595;
+}
+
+q {
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+cite {
+  padding-right: 2rem;
+  font-size: 0.8rem;
+}
+.post-icons {
+  float: right;
+}
+
+.icon {
+  color: rgb(77, 77, 184);
+  margin-left: 0.5rem;
+}
+
+.icon:focus,
+.icon:hover,
+.icon:active {
+  color: rgb(68, 68, 174);
+  transform: scale(105%);
+}
+
+.disabled-link {
+  /* Change the color to indicate it's disabled */
+  pointer-events: none; /* Disable pointer events to prevent click */
+  cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+}
+
+.disabled-link > * {
+  color: rgb(154, 154, 224);
+}
