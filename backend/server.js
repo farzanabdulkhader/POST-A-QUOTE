@@ -2,7 +2,10 @@ import express from "express";
 import { v4 as uuidv4 } from "uuid";
 import { formatDate } from "./utilities/FormatedDate.js";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
 import cors from "cors";
+
+dotenv.config();
 
 const PORT = 3000;
 const app = express();
@@ -50,7 +53,12 @@ const POSTS = [
   },
 ];
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL, // Replace with your React frontend URL
+    methods: "GET,POST,PATCH,DELETE",
+  })
+);
 app.use(bodyParser.json());
 
 app.get("/posts", (req, res) => {

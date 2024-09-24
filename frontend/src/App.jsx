@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     async function getPosts() {
       setIsLoading(true);
-      const res = await fetch("http://localhost:3000/posts");
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/posts`);
       const data = await res.json();
       setPosts(data.posts);
       setIsLoading(false);
@@ -27,7 +27,7 @@ function App() {
   const handleAddNewPost = async () => {
     try {
       let hasError = false;
-      const res = await fetch("http://localhost:3000/post", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/post`, {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -65,13 +65,16 @@ function App() {
         ...formData,
       };
 
-      const res = await fetch(`http://localhost:3000/posts?id=${editId}`, {
-        method: "PATCH",
-        body: JSON.stringify(updatedFormData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/posts?id=${editId}`,
+        {
+          method: "PATCH",
+          body: JSON.stringify(updatedFormData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (!res.ok) {
         throw new Error("Failed to update post");
       }
@@ -92,9 +95,12 @@ function App() {
   };
 
   const handleDeletePost = async (id) => {
-    const res = await fetch(`http://localhost:3000/posts?id=${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/posts?id=${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     if (!res.ok) {
       alert("Failed to delete post");
       return;
