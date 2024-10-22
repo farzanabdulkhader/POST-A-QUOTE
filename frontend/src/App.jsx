@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     async function getPosts() {
       setIsLoading(true);
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/posts`);
+      const res = await fetch("https://post-a-quote.onrender.com/posts");
       const data = await res.json();
       setPosts(data.posts);
       setIsLoading(false);
@@ -27,7 +27,7 @@ function App() {
   const handleAddNewPost = async () => {
     try {
       let hasError = false;
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/post`, {
+      const res = await fetch("https://post-a-quote.onrender.com/post", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -66,7 +66,7 @@ function App() {
       };
 
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/posts?id=${editId}`,
+        `https://post-a-quote.onrender.com/posts?id=${editId}`,
         {
           method: "PATCH",
           body: JSON.stringify(updatedFormData),
@@ -96,7 +96,7 @@ function App() {
 
   const handleDeletePost = async (id) => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/posts?id=${id}`,
+      `https://post-a-quote.onrender.com/posts?id=${id}`,
       {
         method: "DELETE",
       }

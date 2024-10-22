@@ -53,12 +53,7 @@ const POSTS = [
   },
 ];
 
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL, // Replace with your React frontend URL
-    methods: "GET,POST,PATCH,DELETE",
-  })
-);
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/posts", (req, res) => {
